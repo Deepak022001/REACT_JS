@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './LoginPage.css';
+import './studies.css';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -10,8 +10,8 @@ export default function LoginPage() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (email === 'deepak@gmail.com' && password === 'password') {
-      navigate('/dashboard');
+    if (email === 'user@example.com' && password === 'password') {
+      navigate('/products'); // ✅ Redirects to Product Catalogue page
     } else {
       setError('Invalid email or password');
     }
