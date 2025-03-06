@@ -16,7 +16,7 @@ export default function ControlledForm() {
       <div className='form-group'>
         <label>Name:</label>
         <input
-          type={showText ? 'text' : 'password'} // Toggle input type
+          type={showText ? 'text' : 'password'}
           name='name'
           value={formData.name}
           onChange={handleChange}
@@ -27,7 +27,7 @@ export default function ControlledForm() {
       <div className='form-group'>
         <label>Email:</label>
         <input
-          type={showText ? 'text' : 'password'} // Toggle input type
+          type={showText ? 'text' : 'password'}
           name='email'
           value={formData.email}
           onChange={handleChange}
