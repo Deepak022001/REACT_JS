@@ -1,10 +1,8 @@
 import { useState } from 'react';
 import './studies.css';
-
 export default function ControlledForm() {
   const [formData, setFormData] = useState({ name: '', email: '' });
   const [showText, setShowText] = useState(true);
-
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -23,7 +21,6 @@ export default function ControlledForm() {
           placeholder='Enter your name'
         />
       </div>
-
       <div className='form-group'>
         <label>Email:</label>
         <input
@@ -34,7 +31,6 @@ export default function ControlledForm() {
           placeholder='Enter your email'
         />
       </div>
-
       <div className='preview'>
         <h3>Live Preview:</h3>
         <p>
@@ -45,7 +41,6 @@ export default function ControlledForm() {
           {showText ? formData.email || 'N/A' : '••••••'}
         </p>
       </div>
-
       <button
         className='toggle-btn'
         onClick={() => setShowText(!showText)}
