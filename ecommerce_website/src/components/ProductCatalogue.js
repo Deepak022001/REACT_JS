@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import './studies.css';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import './productCatalogue.css';
 
 const products = [
   {
@@ -7,7 +8,7 @@ const products = [
     name: 'Laptop',
     price: '₹50,000',
     image:
-      'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSjx6T94778gCxvxYcrp0615p_kHV_RUDlqSrF0_EpevGQ09U8mbE7BHFjyeuCecdejlHQo6Axgoe6sPJU1K93K8Pzzc_egWOevD5st266O0cyng9FkJ-tVJdzmcgH2mtMXmHm5BPo&usqp=CAc', // Replace with actual image URLs
+      'https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1685966374/Croma%20Assets/Computers%20Peripherals/Laptop/Images/256711_umnwok.png?tr=w-1000',
   },
   {
     id: 2,
@@ -25,8 +26,8 @@ const products = [
   },
 ];
 
-export default function ProductCatalogue() {
-  const [cart, setCart] = useState([]);
+export default function ProductCatalogue({ cart, setCart }) {
+  const navigate = useNavigate();
 
   const addToCart = (product) => {
     setCart([...cart, product]);
@@ -36,6 +37,12 @@ export default function ProductCatalogue() {
   return (
     <div className='product-container'>
       <h2>Product Catalogue</h2>
+      <button
+        className='cart-btn'
+        onClick={() => navigate('/cart')}
+      >
+        Go to Cart ({cart.length})
+      </button>
       <div className='product-list'>
         {products.map((product) => (
           <div
