@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+## **1. Imports**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- The `useState` hook is imported from React to manage the state of the form.
+- The `studies.css` file is imported for styling purposes.
 
-## Available Scripts
+## **2. State Management**
 
-In the project directory, you can run:
+- **`formData` State:** Stores an object containing `name` and `email`, both initialized as empty strings.
+- **`showText` State:** A boolean variable (default: `true`) that controls whether the text input values are visible or masked.
 
-### `npm start`
+## **3. `handleChange` Function (Updating Form Data)**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- This function updates the `formData` state dynamically as the user types into the input fields.
+- It uses the spread operator (`...formData`) to keep existing values while updating the changed field.
+- The `name` attribute of the input field determines which field (name or email) to update.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## **4. Input Fields (Controlled Components)**
 
-### `npm test`
+- The `<input>` elements are controlled components, meaning their values come from React state (`formData`).
+- Each input field updates its value in real-time using the `handleChange` function.
+- The `type` attribute is set to `'text'` when `showText` is `true`, and `'password'` when `false`, controlling visibility.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## **5. Live Preview Section**
 
-### `npm run build`
+- This section displays the current values of `name` and `email` in real time.
+- If `showText` is `true`, it displays the actual text. Otherwise, it replaces it with masked characters (`••••••`).
+- Default placeholders (`'N/A'`) are shown when no input is provided.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## **6. Toggle Button (`Show/Hide Text`)**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Clicking this button toggles the `showText` state (`true ⇄ false`).
+- When `true`, input values are visible; when `false`, they are masked.
+- The button label changes dynamically between **'Hide Text'** and **'Show Text'** accordingly.
