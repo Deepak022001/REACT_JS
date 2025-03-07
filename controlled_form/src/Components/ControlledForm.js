@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './studies.css'; //
+import './studies.css';
 
 export default function ControlledForm() {
   const [formData, setFormData] = useState({ name: '', email: '' });
