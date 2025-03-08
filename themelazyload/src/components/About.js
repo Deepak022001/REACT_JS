@@ -1,4 +1,3 @@
-// About.js (Lazy Loaded Component)
 import React from 'react';
 
 const About = () => {
@@ -9,3 +8,5 @@ const About = () => {
     </div>
   );
 };
+
+export default About;
