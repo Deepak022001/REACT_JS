@@ -1,7 +1,5 @@
 import React, { Suspense } from 'react';
 import { ThemeProvider, useTheme } from './components/ThemeContext';
-
-// Lazy load components
 const About = React.lazy(() => import('./components/About'));
 const Contact = React.lazy(() => import('./components/Contact'));
 
